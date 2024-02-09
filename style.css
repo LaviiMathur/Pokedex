@@ -1,0 +1,464 @@
+/*FONTS AND VARIABLE*/
+
+@font-face {
+  font-family: Moltors;
+  src: url(Fonts/Moltors.ttf);
+}
+@font-face {
+  font-family: PocketMonk;
+  src: url(Fonts/PocketMonk.ttf);
+}
+@font-face {
+  font-family: PokemonGb;
+  src: url(Fonts/PokemonGb.ttf);
+}
+@font-face {
+  font-family: SlumbersWeight;
+  src: url(Fonts/SlumbersWeight.ttf);
+}
+
+:root {
+  --grass: #5fbd58;
+  --bug: #92bc2c;
+  --dark: #595761;
+  --dragon: #0c69c8;
+  --electric: #f2d94e;
+  --fairy: #ee90e6;
+  --fighting: #d3425f;
+  --fire: #dc872f;
+  --flying: #a1bbec;
+  --ghost: #5f6dbc;
+  --ground: #da7c4d;
+  --ice: #75d0c1;
+  --normal: #a0a29f;
+  --poison: #b763cf;
+  --psychic: #ff2ca8;
+  --rock: #a38c21;
+  --steel: #5695a3;
+  --water: #539ddf;
+}
+.grass {
+  background: var(--grass);
+  box-shadow: var(--grass) 0px 0px 3px 2px;
+}
+.bug {
+  background: var(--bug);
+  box-shadow: var(--bug) 0px 0px 3px 2px;
+}
+.fire {
+  background: var(--fire);
+  box-shadow: var(--fire) 0px 0px 3px 2px;
+}
+.dark {
+  background: var(--dark);
+  box-shadow: var(--dark) 0px 0px 3px 2px;
+}
+.dragon {
+  background: var(--dragon);
+  box-shadow: var(--dragon) 0px 0px 3px 2px;
+}
+.electric {
+  background: var(--electric);
+  box-shadow: var(--electric) 0px 0px 3px 2px;
+}
+.fairy {
+  background: var(--fairy);
+  box-shadow: var(--fairy) 0px 0px 3px 2px;
+}
+.fighting {
+  background: var(--fighting);
+  box-shadow: var(--fighting) 0px 0px 3px 2px;
+}
+.flying {
+  background: var(--flying);
+  box-shadow: var(--flying) 0px 0px 3px 2px;
+}
+.ghost {
+  background: var(--ghost);
+  box-shadow: var(--ghost) 0px 0px 3px 2px;
+}
+.ground {
+  background: var(--ground);
+  box-shadow: var(--ground) 0px 0px 3px 2px;
+}
+.ice {
+  background: var(--ice);
+  box-shadow: var(--ice) 0px 0px 3px 2px;
+}
+.normal {
+  background: var(--normal);
+  box-shadow: var(--normal) 0px 0px 3px 2px;
+}
+.poison {
+  background: var(--poison);
+  box-shadow: var(--poison) 0px 0px 3px 2px;
+}
+.psychic {
+  background: var(--psychic);
+  box-shadow: var(--psychic) 0px 0px 3px 2px;
+}
+.rock {
+  background: var(--rock);
+  box-shadow: var(--rock) 0px 0px 3px 2px;
+}
+.steel {
+  background: var(--steel);
+  box-shadow: var(--steel) 0px 0px 3px 2px;
+}
+.water {
+  background: var(--water);
+  box-shadow: var(--water) 0px 0px 3px 2px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  user-select: text;
+  box-sizing: border-box;
+  scrollbar-width: 20px;
+  scrollbar-color: #b6b6b6 #121212;
+  scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: #141414;
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  background-color: #b6b6b6;
+}
+
+body {
+  background: #2e2e2e;
+  transition: all 400ms linear;
+  height: 100%;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+/*  STYLING HEADER */
+header {
+  background-color: #141414;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  width: 100%;
+  transition: all 400ms linear;
+  color: white;
+  z-index: 99999;
+}
+/* LOGO */
+.logo {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 600ms;
+}
+.logo img {
+  height: 3rem;
+  image-rendering: pixelated;
+}
+.logo:hover {
+  transform: rotate(360deg);
+}
+/* SEARCH BOX*/
+.box {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.box > input {
+  width: 50%;
+  height: 50px;
+  border-radius: 15px;
+  outline: none;
+  font-size: 1.7em;
+  font-weight: 300;
+  letter-spacing: 5px;
+  font-family: "slumbersWeight", sans-serif;
+  background-color: #e0e0e0;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 3px 2px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 2px;
+  border: 2px solid rgb(60, 64, 67, 0.7);
+  cursor: pointer;
+  text-align: center;
+}
+::placeholder {
+  font-weight: 400;
+  color: #121212;
+  transition: opacity 200ms;
+}
+input:focus::placeholder {
+  opacity: 0.3;
+}
+.feature {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  justify-content: space-evenly;
+}
+/* DARK MODE */
+.toggle {
+  display: flex;
+  align-items: center;
+}
+#darkMode {
+  opacity: 0;
+  visibility: hidden;
+  border: 2px solid;
+  width: 0;
+}
+.darkMode {
+  display: flex;
+  width: 60%;
+  justify-content: space-around;
+}
+.darkMode span {
+  font-size: 1.5em;
+  font-family: pocketmonk;
+}
+.btn {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  cursor: pointer;
+  width: 44px;
+  height: 24px;
+  padding: 0px 2px;
+  border-radius: 21px;
+  border: 2px solid #121212;
+  background-color: #b6b6b6;
+  transition: 400ms;
+  box-sizing: content-box;
+}
+
+.btn::before {
+  position: absolute;
+  content: "";
+  background-color: rgb(0, 81, 255);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  transition: 400ms;
+}
+
+.fa-sun {
+  position: absolute;
+  padding: 2px;
+}
+
+.fa-moon {
+  position: absolute;
+  right: 6px;
+  color: #b6b6b6;
+}
+
+#darkMode:checked + .btn::before {
+  transform: translateX(24px);
+}
+
+#darkMode:checked + .btn {
+  background-color: black;
+  border: 2px solid #b6b6b6;
+}
+
+#darkMode:checked + .btn > .fa-sun {
+  color: black;
+}
+.github {
+  transition: all 200ms linear;
+  color: white;
+  cursor: pointer;
+  scale: 1.2;
+}
+.github:hover {
+  scale: 1.5;
+}
+.headerClr .github {
+  color: black;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+.bodyClr {
+  background-color: #e9e9e9;
+}
+.headerClr {
+  background-color: #e0e0e0;
+  color: black;
+}
+
+/* REGION SECTION */
+.regions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  min-height: 5rem;
+  margin: 20px auto;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.region {
+  border: 1px #ffffff solid;
+  padding: 5px;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.7em;
+  font-weight: 300;
+  letter-spacing: 5px;
+  font-family: "slumbersWeight", sans-serif;
+  text-align: center;
+  cursor: pointer;
+  font-style: italic;
+  transition: all 300ms ease-in-out;
+}
+.region:hover {
+  box-shadow: 0px 0px 5px 3px #a0a29f;
+}
+.region:active {
+  background: #a0a29f;
+  scale: 0.9;
+}
+.regionClr {
+  background-color: rgb(235, 231, 225);
+  color: #121212;
+  border: 2px solid;
+}
+.activeRegion {
+  background: #a0a29f;
+  color: black;
+  border: 2px solid black;
+}
+/* MAIN CONTENT*/
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+  width: 80%;
+  margin: auto;
+  font-style: italic;
+}
+
+.container {
+  cursor: pointer;
+}
+.card {
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  display: flex;
+  height: 330px;
+  width: 210px;
+  color: #202020;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms linear;
+  transform-style: preserve-3d;
+}
+.container:hover .card {
+  transform: rotateY(180deg);
+}
+
+.side {
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.images {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.background {
+  animation: rotate infinite 2.5s linear;
+  opacity: 0.7;
+}
+.image {
+  width: 100%;
+  scale: 0.45;
+  position: absolute;
+}
+.front_image {
+  scale: 0.6;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.number {
+  letter-spacing: 5px;
+  font-size: 1.3em;
+  font-weight: 600;
+  width: 100%;
+  font-family: PokemonGb;
+  text-align: center;
+}
+.name {
+  font-family: Moltors;
+  letter-spacing: 5px;
+  width: 100%;
+  text-align: center;
+}
+.types {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 5px;
+}
+.type_bg {
+  height: 30px;
+  width: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+}
+.type_bg img {
+  height: 20px;
+}
+.front,
+.back {
+  position: absolute;
+  transition: all 300ms linear;
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+.about {
+  padding: 10px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  font-weight: 900;
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@media screen and (max-width: 600px) {
+  .github {
+    display: none;
+  }
+  .darkMode {
+    width: 100%;
+    justify-content: space-evenly;
+  }
+}
